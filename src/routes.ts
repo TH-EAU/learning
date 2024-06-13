@@ -14,12 +14,13 @@ const routes = {
         {
           path : "architecture-trois-tiers",
           label: "Architecture trois tiers",
+          icon: FaArchway,
           childrens : [
             {
               path: "introduction",
               label : "Introduction",
               element : AttIntro,
-              icon: FaArchway
+              icon: FaArchway,
             }
           ]
         }

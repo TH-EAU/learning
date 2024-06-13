@@ -30,8 +30,9 @@ const Sidebar: React.FC = () => {
           <AccordionItem key={index}>
             <h2>
               <AccordionButton>
+                <section.icon />
+                {section.label}
                 <AccordionIcon />
-                {section.path}
               </AccordionButton>
             </h2>
             <AccordionPanel>
