@@ -1,0 +1,39 @@
+import {
+  HStack,
+  Heading,
+  Button,
+  Image,
+  Center,
+  Tag,
+  TagLabel,
+  TagLeftIcon,
+  TagRightIcon,
+} from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+import NextPageLink from "@components/documentation/NextPageLink";
+
+# Git
+
+Bienvenue dans le cours de git. Vous trouverez dans ce cours toutes les ressources pour vous guider dans l'utilisation de l'outil **Git**.
+Vous trouverez aussi des resources sur l'utilisation des plateformes <Button colorScheme="orange" variant='link'><Link to="https://github.com/">Github</Link></Button> et <Button colorScheme="purple" variant='link' ><Link to="https://about.gitlab.com/fr-fr/">Gitlab</Link></Button>
+
+<Center>
+  <Image
+    src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2048px-Git_icon.svg.png"
+    alt="Logo Git"
+    w={20}
+    m={8}
+  />
+</Center>
+
+## Sommaire
+
+- Introduction
+- Premiers pas avec Git
+- Methode Gestion de projet avec Gitlab
+- Concepts intermédiaires
+- Concepts Avancés
+
+<HStack justify="space-between" mt={24}>
+  <NextPageLink to="introduction" label="introduction" />
+</HStack>

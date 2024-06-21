@@ -5,7 +5,8 @@
   "type": "module",
   "homepage": "https://th-eau.github.io/learning",
   "scripts": {
-    "dev": "vite",
+    "routes": "node ./src/scripts/processRoute.cjs",
+    "dev": "yarn routes | vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
@@ -23,6 +24,7 @@
     "@vitejs/plugin-vue": "^5.0.5",
     "framer-motion": "^11.2.10",
     "fs": "^0.0.1-security",
+    "mermaid": "^10.9.1",
     "path": "^0.12.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -39,6 +41,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
     "gh-pages": "^6.1.1",
+    "plop": "^4.0.1",
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
   }

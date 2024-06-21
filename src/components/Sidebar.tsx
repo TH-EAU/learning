@@ -6,46 +6,21 @@ import {
   AccordionIcon,
   Stack,
   Heading,
+  Text,
   HStack,
-  Button,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import routes from "../routes";
+import routes from "../routes/routes";
 
 const Sidebar: React.FC = () => {
-  const accordionData = routes.docs.childrens;
+  const docsRoute = routes.docs;
   return (
-    <Stack
-      w="full"
-      h="full"
-      borderColor="grey.500"
-      borderBottom="1px solid"
-      p={5}
-    >
-      <Heading fontSize="sm" textTransform="uppercase">
+    <Stack w="full" h="full" p={5}>
+      <Heading fontSize="smaller" fontWeight="800" textTransform="uppercase">
         Cours
       </Heading>
-      <Accordion allowToggle>
-        {accordionData.map((section, index) => (
-          <AccordionItem key={index}>
-            <h2>
-              <AccordionButton>
-                <section.icon />
-                {section.label}
-                <AccordionIcon />
-              </AccordionButton>
-            </h2>
-            <AccordionPanel>
-              {section.childrens?.map((child) => (
-                <NavItem
-                  to={`docs/${section.path}/${child.path}`}
-                  label={child.label}
-                  Icon={child.icon}
-                />
-              ))}
-            </AccordionPanel>
-          </AccordionItem>
-        ))}
+      <Accordion allowToggle allowMultiple>
+        {generateNavigation(docsRoute, "docs")}
       </Accordion>
     </Stack>
   );
@@ -53,17 +28,28 @@ const Sidebar: React.FC = () => {
 
 export default Sidebar;
 
-const NavItem: React.FC<{ Icon: React.FC; to: string; label: string }> = ({
-  Icon,
-  to,
-  label,
-}) => {
-  return (
-    <Link to={to}>
-      <HStack>
-        <Icon />
-        <Button variant="link">{label}</Button>
-      </HStack>
-    </Link>
-  );
+const generateNavigation = (routes: any[], origin: string) => {
+  return routes.map((route) => {
+    const path = `${origin}/${route.path}`;
+    return (
+      <AccordionItem key={path} border="none">
+        <AccordionButton justifyContent="space-between" rounded="md">
+          <Link to={path}>
+            <HStack>
+              {route.icon && <route.icon />}
+              <Text as="span" fontSize="small" textAlign="left">
+                {route.label}
+              </Text>
+            </HStack>
+          </Link>
+          {route.children && <AccordionIcon />}
+        </AccordionButton>
+        {route.children && (
+          <AccordionPanel>
+            {generateNavigation(route.children, path)}
+          </AccordionPanel>
+        )}
+      </AccordionItem>
+    );
+  });
 };

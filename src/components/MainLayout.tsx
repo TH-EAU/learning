@@ -1,26 +1,31 @@
-import { Container, Grid, GridItem, SimpleGrid } from "@chakra-ui/react";
+import { Container, Grid, GridItem } from "@chakra-ui/react";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import { ReactNode } from "react";
 
 const MainLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (
-    <SimpleGrid columns={1}>
+    <>
       <Navbar />
-      <Grid
-        h="full"
-        templateRows="repeat(1, 1fr)"
-        templateColumns="repeat(5, 1fr)"
-        gap={4}
-      >
-        <GridItem>
-          <Sidebar />
-        </GridItem>
-        <GridItem colSpan={4}>
-          <Container>{children}</Container>
-        </GridItem>
-      </Grid>
-    </SimpleGrid>
+      <Container maxW="container.xl">
+        <Grid
+          mt={16}
+          h="full"
+          templateRows="repeat(1, 1fr)"
+          templateColumns="repeat(15, 1fr)"
+          gap={4}
+        >
+          <GridItem colSpan={4} display={{ base: "none", md: "block" }}>
+            <Sidebar />
+          </GridItem>
+          <GridItem colSpan={{ base: 15, md: 8 }}>
+            <Container maxW="full" p={5}>
+              {children}
+            </Container>
+          </GridItem>
+        </Grid>
+      </Container>
+    </>
   );
 };
 
