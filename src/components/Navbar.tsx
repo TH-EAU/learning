@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { CiMenuBurger } from "react-icons/ci";
 import { GoX } from "react-icons/go";
 import { FaMoon, FaSun } from "react-icons/fa";
+import { VscGear } from "react-icons/vsc";
 
 import {
   Image,
@@ -32,7 +33,8 @@ const Navbar: React.FC = () => {
         h={16}
         p={4}
         gap={8}
-        borderBottom="1px grey solid"
+        borderBottom="1px grey"
+        borderColor="system.600"
         position="fixed"
         left={0}
         top={0}
@@ -52,7 +54,7 @@ const Navbar: React.FC = () => {
 
         <Flex alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
-            size={"md"}
+            size="md"
             icon={isOpen ? <GoX /> : <CiMenuBurger />}
             aria-label={"Open Menu"}
             display={{ lg: "none" }}
@@ -64,6 +66,11 @@ const Navbar: React.FC = () => {
               {colorMode === "light" ? <FaMoon /> : <FaSun />}
             </Button>
           </HStack>
+          <IconButton
+            size="md"
+            aria-label={"Open Settings"}
+            icon={<VscGear />}
+          ></IconButton>
         </Flex>
 
         <Drawer isOpen={isOpen} placement="left" onClose={onClose}>

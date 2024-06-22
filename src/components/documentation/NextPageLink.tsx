@@ -8,7 +8,15 @@ const NextPageLink: React.FC<{
   invert?: boolean;
 }> = ({ to, label, invert }) => {
   return (
-    <Button p={5} mt={5} border="1px solid" variant="link">
+    <Button
+      p={5}
+      mt={5}
+      border="1px solid"
+      variant="link"
+      _hover={{
+        bg: "primary.200",
+      }}
+    >
       <HStack>
         {invert && <IoMdArrowBack />}
         <Link to={to}>{label}</Link>

@@ -17,9 +17,9 @@ const Sidebar: React.FC = () => {
   return (
     <Stack w="full" h="full" p={5}>
       <Heading fontSize="smaller" fontWeight="800" textTransform="uppercase">
-        Cours
+        DOCS
       </Heading>
-      <Accordion allowToggle allowMultiple>
+      <Accordion allowMultiple>
         {generateNavigation(docsRoute, "docs")}
       </Accordion>
     </Stack>
@@ -30,10 +30,14 @@ export default Sidebar;
 
 const generateNavigation = (routes: any[], origin: string) => {
   return routes.map((route) => {
+    if (route.path === "index") {
+      return null;
+    }
     const path = `${origin}/${route.path}`;
     return (
       <AccordionItem key={path} border="none">
-        <AccordionButton justifyContent="space-between" rounded="md">
+        <AccordionButton justifyContent="left" rounded="md">
+          {route.children && <AccordionIcon />}
           <Link to={path}>
             <HStack>
               {route.icon && <route.icon />}
@@ -42,7 +46,6 @@ const generateNavigation = (routes: any[], origin: string) => {
               </Text>
             </HStack>
           </Link>
-          {route.children && <AccordionIcon />}
         </AccordionButton>
         {route.children && (
           <AccordionPanel>

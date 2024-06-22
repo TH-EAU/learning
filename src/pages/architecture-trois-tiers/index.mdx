@@ -1,7 +1,15 @@
 import { Link } from "react-router-dom";
-import { Button } from "@chakra-ui/react";
+import { Button, HStack, Text } from "@chakra-ui/react";
+import Code from "@components/documentation/Code";
+import { RiSpaceShipFill } from "react-icons/ri";
+import PageHeader from "@components/documentation/PageHeader";
 
-# Architecture trois tiers
+<PageHeader
+  title="Architecture trois tiers"
+  icon={<RiSpaceShipFill />}
+  imageAlt="city-vaporwave"
+  imageUrl="https://images.unsplash.com/photo-1597600159211-d6c104f408d1?q=80&w=1939&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+/>
 
 Bienvenue dans le cours d'Architecture Trois Tiers. Dans ce cours nous allons d√©finir
 
@@ -11,6 +19,12 @@ Bienvenue dans le cours d'Architecture Trois Tiers. Dans ce cours nous allons d√
     <Link to="introduction">Introduction</Link>
   </Button>
 
-- <Button variant="link">
-    <Link to="introduction">Introduction</Link>
-  </Button>
+<Code fileTitle="index.cs" >
+```csharp
+[HttpGet("{id}")]
+public string getSolarSystem(int id, [FromQuery] string label)
+{
+    return $"SolarSystem : {id}, {label}";
+}
+```
+</Code>

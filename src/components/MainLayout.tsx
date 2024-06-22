@@ -2,6 +2,7 @@ import { Container, Grid, GridItem } from "@chakra-ui/react";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import { ReactNode } from "react";
+import Footer from "./Footer";
 
 const MainLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (
@@ -25,6 +26,7 @@ const MainLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
           </GridItem>
         </Grid>
       </Container>
+      <Footer />
     </>
   );
 };
