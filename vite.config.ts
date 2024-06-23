@@ -13,5 +13,5 @@ export default defineConfig({
   },
   plugins: [mdx(), react()],
   base: "./",
-  // base: '/learning/'
+  // base: "/learning/",
 });

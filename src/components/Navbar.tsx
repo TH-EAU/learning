@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { CiMenuBurger } from "react-icons/ci";
 import { GoX } from "react-icons/go";
 import { FaMoon, FaSun } from "react-icons/fa";
-import { VscGear } from "react-icons/vsc";
+import { VscSettings } from "react-icons/vsc";
 
 import {
   Image,
@@ -20,75 +20,76 @@ import {
   DrawerCloseButton,
   useDisclosure,
   useColorMode,
+  Heading,
+  Text,
 } from "@chakra-ui/react";
 import Sidebar from "./Sidebar";
+import Logo from "./Logo";
 
 const Navbar: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Container maxW="container.sm">
+    <>
       <HStack
-        h={16}
-        p={4}
         gap={8}
         borderBottom="1px grey"
         borderColor="system.600"
-        position="fixed"
+        position="sticky"
         left={0}
         top={0}
-        width="full"
         backdropFilter="blur(11px)"
         justifyContent="space-between"
         zIndex={99}
       >
-        <Link to="/">
-          <Image
-            src="/learning/esiea.png"
-            alt="logo"
-            width={28}
-            height={16}
-          ></Image>
-        </Link>
-
-        <Flex alignItems={"center"} justifyContent={"space-between"}>
-          <IconButton
-            size="md"
-            icon={isOpen ? <GoX /> : <CiMenuBurger />}
-            aria-label={"Open Menu"}
-            display={{ lg: "none" }}
-            onClick={isOpen ? onClose : onOpen}
-            variant="ghost"
-          />
-          <HStack as="nav" spacing={4} display={{ base: "none", md: "flex" }}>
-            <Button variant="ghost" onClick={toggleColorMode}>
-              {colorMode === "light" ? <FaMoon /> : <FaSun />}
-            </Button>
-          </HStack>
-          <IconButton
-            size="md"
-            aria-label={"Open Settings"}
-            icon={<VscGear />}
-          ></IconButton>
-        </Flex>
-
-        <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
-          <DrawerOverlay />
-          <DrawerContent>
-            <DrawerHeader borderBottom="1px grey solid">
-              <HStack justifyContent="space-between">
-                <Image alt="logo" src="esiea.png" width={20} height={10} />
-                <DrawerCloseButton p={6} />
+        <Container maxW="container.xl" p={3} pl={8} pr={8}>
+          <HStack align="center" justify="space-between">
+            <Link to="/">
+              <HStack align="center">
+                <Logo />
+                <Text as="span">LEARNING</Text>
               </HStack>
-            </DrawerHeader>
-            <DrawerBody>
-              <Sidebar />
-            </DrawerBody>
-          </DrawerContent>
-        </Drawer>
+            </Link>
+
+            <HStack align="center" justify="space-between">
+              <IconButton
+                size="md"
+                icon={isOpen ? <GoX /> : <CiMenuBurger />}
+                aria-label={"Open Menu"}
+                display={{ lg: "none" }}
+                onClick={isOpen ? onClose : onOpen}
+                variant="ghost"
+              />
+              <Button variant="ghost" onClick={toggleColorMode}>
+                {colorMode === "light" ? <FaMoon /> : <FaSun />}
+              </Button>
+              <IconButton
+                size="md"
+                aria-label={"Open Settings"}
+                icon={<VscSettings />}
+                variant="ghost"
+              ></IconButton>
+            </HStack>
+          </HStack>
+        </Container>
       </HStack>
-    </Container>
+
+      <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerHeader borderBottom="1px grey solid">
+            <HStack justifyContent="space-between">
+              <Logo />
+              <DrawerCloseButton p={6} />
+            </HStack>
+          </DrawerHeader>
+          <DrawerBody>
+            <Sidebar />
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
+    </>
   );
 };
 

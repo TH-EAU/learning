@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 interface Header {
   imageUrl: string;
   imageAlt: string;
-  title: string;
+  title?: string;
   icon?: ReactNode;
 }
 

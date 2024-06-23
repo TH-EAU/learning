@@ -3,7 +3,6 @@ import { mode } from "@chakra-ui/theme-tools";
 import type { StyleFunctionProps } from "@chakra-ui/styled-system";
 
 import "@fontsource/poppins";
-import { color } from "framer-motion";
 
 export const theme = extendTheme({
   styles: {

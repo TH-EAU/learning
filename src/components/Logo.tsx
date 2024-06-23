@@ -1,0 +1,95 @@
+const Logo: React.FC<{ w?: number; h?: number }> = ({ w = 25, h = 48 }) => {
+  return (
+    <svg
+      width={`${w}`}
+      height={`${h}`}
+      viewBox="0 0 55 78"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0.5 49C0.5 33.8 24 0.5 27 0.5C29.5 0.5 57.7 31 54.5 49C51.3 67 36 78 27 78C17 78 0.5 64.2 0.5 49Z"
+        fill="url(#paint0_linear_61_15)"
+      />
+      <path
+        d="M9.00015 59.5001C5.00015 54.3001 4.5 47.1667 5 45C7.83334 45.5 15.6002 47.9001 22.0002 47.5001C30.0002 47.0001 32.5002 45.5 41.5002 46C48.7002 46.4 52.0002 46.3333 52.0002 48C51.6668 49.8333 48.4002 55.1001 44.0002 61.5001C39.6002 67.9001 32 73 26.5 73C21 73 13.0002 64.7001 9.00015 59.5001Z"
+        fill="url(#paint1_linear_61_15)"
+      />
+      <path
+        d="M29 70.5C33 68.3333 41.8 61.8 45 53C48.2 44.2 41.6667 31.3333 38 26"
+        stroke="url(#paint2_linear_61_15)"
+        stroke-width="5"
+        stroke-linecap="round"
+      />
+      <path
+        d="M11.5001 51.4999C7.10007 51.0999 5.33334 48.9999 5 45.9999C4.37345 42.9999 8.98194 41.6446 13.5 43C16.6667 44 24.4 45.9999 30 45.9999C35.6 45.9999 40.3333 45.6665 42 45.4999C52 45.0999 52.5 47.6665 51.5 48.9999C46 52.9999 41.5 56.4999 32 53.4999C22.5 50.4999 17.0001 51.9999 11.5001 51.4999Z"
+        fill="url(#paint3_linear_61_15)"
+      />
+      <ellipse
+        cx="37.7151"
+        cy="18.7552"
+        rx="2.86318"
+        ry="7.5"
+        transform="rotate(-35.8742 37.7151 18.7552)"
+        fill="#FFFEFE"
+      />
+      <ellipse
+        cx="44.5869"
+        cy="29.2139"
+        rx="1.26724"
+        ry="2.97938"
+        transform="rotate(-29.9928 44.5869 29.2139)"
+        fill="#FFFEFE"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_61_15"
+          x1="28"
+          y1="6"
+          x2="16.5"
+          y2="70"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#E6BCFF" />
+          <stop offset="0.735" stop-color="#9226C5" />
+          <stop offset="0.975" stop-color="#580C7B" />
+        </linearGradient>
+        <linearGradient
+          id="paint1_linear_61_15"
+          x1="27.8864"
+          y1="42.4648"
+          x2="27.8864"
+          y2="74.9999"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0.165" stop-color="#D592FF" />
+          <stop offset="0.72" stop-color="#AD00FF" />
+        </linearGradient>
+        <linearGradient
+          id="paint2_linear_61_15"
+          x1="35.5861"
+          y1="17"
+          x2="35.5861"
+          y2="64"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#F0CFFF" />
+          <stop offset="1" stop-color="#9E00FF" stop-opacity="0.8" />
+        </linearGradient>
+        <linearGradient
+          id="paint3_linear_61_15"
+          x1="42"
+          y1="39.5"
+          x2="5.49999"
+          y2="63.5"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0.365" stop-color="#F0CFFF" />
+          <stop offset="1" stop-color="#C446FF" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+};
+
+export default Logo;

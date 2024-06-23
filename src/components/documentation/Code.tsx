@@ -1,14 +1,7 @@
 import { ReactNode, useEffect } from "react";
 import hljs from "highlight.js";
 import "highlight.js/styles/night-owl.min.css";
-import {
-  Box,
-  Button,
-  HStack,
-  IconButton,
-  Text,
-  useToast,
-} from "@chakra-ui/react";
+import { Box, HStack, IconButton, Text, useToast } from "@chakra-ui/react";
 import { VscCopy } from "react-icons/vsc";
 
 const Code: React.FC<{
