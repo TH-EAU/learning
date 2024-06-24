@@ -22,13 +22,12 @@ const Sidebar: React.FC = () => {
       <Accordion allowMultiple>
         {docsRoute.map((el) => {
           return (
-            <Stack>
-              <Link to={`${origin}/${el.path}`}>
+            <Stack key={el.label} mb={8}>
+              <Link to={`${origin}${el.path}`}>
                 <Heading
                   fontSize="smaller"
                   fontWeight="800"
                   textTransform="uppercase"
-                  mt={3}
                   pl={5}
                 >
                   {el.label}
@@ -49,7 +48,7 @@ const generateNavigation = (routes: any[], origin: string) => {
   const { colorMode } = useColorMode();
 
   return routes.map((route) => {
-    if (route.path === "index") {
+    if (route.path.includes("index")) {
       return null;
     }
     const path = `${origin}/${route.path}`;
@@ -74,7 +73,7 @@ const generateNavigation = (routes: any[], origin: string) => {
                 fontWeight="200"
                 textAlign="left"
               >
-                {route.label}
+                {route.label.charAt(0).toUpperCase() + route.label.slice(1)}
               </Text>
             </HStack>
           </Link>

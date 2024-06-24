@@ -6,11 +6,9 @@ import { FaMoon, FaSun } from "react-icons/fa";
 import { VscSettings } from "react-icons/vsc";
 
 import {
-  Image,
   HStack,
   Container,
   IconButton,
-  Flex,
   Button,
   Drawer,
   DrawerBody,
@@ -20,7 +18,6 @@ import {
   DrawerCloseButton,
   useDisclosure,
   useColorMode,
-  Heading,
   Text,
 } from "@chakra-ui/react";
 import Sidebar from "./Sidebar";

@@ -18,8 +18,8 @@ const Logo: React.FC<{ w?: number; h?: number }> = ({ w = 25, h = 48 }) => {
       <path
         d="M29 70.5C33 68.3333 41.8 61.8 45 53C48.2 44.2 41.6667 31.3333 38 26"
         stroke="url(#paint2_linear_61_15)"
-        stroke-width="5"
-        stroke-linecap="round"
+        strokeWidth="5"
+        strokeLinecap="round"
       />
       <path
         d="M11.5001 51.4999C7.10007 51.0999 5.33334 48.9999 5 45.9999C4.37345 42.9999 8.98194 41.6446 13.5 43C16.6667 44 24.4 45.9999 30 45.9999C35.6 45.9999 40.3333 45.6665 42 45.4999C52 45.0999 52.5 47.6665 51.5 48.9999C46 52.9999 41.5 56.4999 32 53.4999C22.5 50.4999 17.0001 51.9999 11.5001 51.4999Z"
@@ -50,9 +50,9 @@ const Logo: React.FC<{ w?: number; h?: number }> = ({ w = 25, h = 48 }) => {
           y2="70"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#E6BCFF" />
-          <stop offset="0.735" stop-color="#9226C5" />
-          <stop offset="0.975" stop-color="#580C7B" />
+          <stop stopColor="#E6BCFF" />
+          <stop offset="0.735" stopColor="#9226C5" />
+          <stop offset="0.975" stopColor="#580C7B" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_61_15"
@@ -62,8 +62,8 @@ const Logo: React.FC<{ w?: number; h?: number }> = ({ w = 25, h = 48 }) => {
           y2="74.9999"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.165" stop-color="#D592FF" />
-          <stop offset="0.72" stop-color="#AD00FF" />
+          <stop offset="0.165" stopColor="#D592FF" />
+          <stop offset="0.72" stopColor="#AD00FF" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_61_15"
@@ -73,8 +73,8 @@ const Logo: React.FC<{ w?: number; h?: number }> = ({ w = 25, h = 48 }) => {
           y2="64"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F0CFFF" />
-          <stop offset="1" stop-color="#9E00FF" stop-opacity="0.8" />
+          <stop stopColor="#F0CFFF" />
+          <stop offset="1" stopColor="#9E00FF" stopOpacity="0.8" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_61_15"
@@ -84,8 +84,8 @@ const Logo: React.FC<{ w?: number; h?: number }> = ({ w = 25, h = 48 }) => {
           y2="63.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.365" stop-color="#F0CFFF" />
-          <stop offset="1" stop-color="#C446FF" />
+          <stop offset="0.365" stopColor="#F0CFFF" />
+          <stop offset="1" stopColor="#C446FF" />
         </linearGradient>
       </defs>
     </svg>

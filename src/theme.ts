@@ -3,6 +3,9 @@ import { mode } from "@chakra-ui/theme-tools";
 import type { StyleFunctionProps } from "@chakra-ui/styled-system";
 
 import "@fontsource/poppins";
+import "@fontsource/roboto";
+import "@fontsource/roboto/";
+import "@fontsource-variable/roboto-mono";
 
 export const theme = extendTheme({
   styles: {

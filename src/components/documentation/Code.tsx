@@ -38,25 +38,20 @@ const Code: React.FC<{
       rounded="md"
       overflow="hidden"
       mt={6}
-      border="1px solid"
-      borderColor="primary.200"
+      bg="#011627"
+      color="white"
+      boxShadow="0px -1px 0px 0px #e9e8fc55, -1px 0px 0px 0px #e9e8fc22 ,1px 1px 0px 0px #000024 "
     >
-      <HStack
-        justify="space-between"
-        alignContent="end"
-        pl={2}
-        pr={2}
-        borderBottom="1px solid"
-        borderColor="primary.200"
-      >
+      <HStack justify="space-between" alignContent="end" pl={5} pr={0}>
         <Text as="span" fontSize="small">
           {fileTitle}
         </Text>
         <IconButton
-          variant="ghost"
+          variant="unstyled"
           aria-label="copy"
           icon={<VscCopy />}
           onClick={onCopy}
+          color="white"
         />
       </HStack>
       <Text position="absolute" top={0} left={0} fontSize="xx-small" p={2}>

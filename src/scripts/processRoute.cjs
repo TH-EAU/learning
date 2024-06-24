@@ -26,7 +26,10 @@ const writeFolderStructure = ({
       parent: basePath,
       isDirectory,
       label: element.split(".")[0].split("-").join(" "),
-      path: element.split(".")[0],
+      path:
+        basePath.replaceAll("\\", "").replaceAll("/", "") +
+        "/" +
+        element.split(".")[0],
     });
 
     if (isDirectory) {
